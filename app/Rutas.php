@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rutas extends Model
 {
-    protected $fillable=['name'];
+    protected $fillable=['name','unidades'];
 }
