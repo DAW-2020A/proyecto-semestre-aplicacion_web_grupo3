@@ -15,7 +15,7 @@ class CreateHorariosTable extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Descrip_Dias');
+            $table->enum('type', ['lunes-viernes', 'finsemana-feriados']);
             $table->time('start',0);
             $table->time('end',0);
         });
