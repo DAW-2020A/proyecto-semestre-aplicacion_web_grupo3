@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRutasTable extends Migration
+class AddTimestampsToRutas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateRutasTable extends Migration
      */
     public function up()
     {
-        Schema::create('rutas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name',50);
-            $table->decimal('units_number',3);
-            $table->timestamps();
+        Schema::table('rutas', function (Blueprint $table) {
+            //
         });
     }
 
@@ -28,6 +25,8 @@ class CreateRutasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rutas');
+        Schema::table('rutas', function (Blueprint $table) {
+            //
+        });
     }
 }
