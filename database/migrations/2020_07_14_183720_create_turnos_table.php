@@ -17,6 +17,7 @@ class CreateTurnosTable extends Migration
             $table->bigIncrements('id');
             $table->date('date');
             $table->time('hour_start');
+            $table->timestamps();
         });
     }
 
