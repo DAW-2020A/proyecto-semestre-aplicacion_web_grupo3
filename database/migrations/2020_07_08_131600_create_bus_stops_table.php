@@ -19,6 +19,7 @@ class CreateBusStopsTable extends Migration
             $table->string('direction',100);
             $table->decimal('longitude',13,10);
             $table->decimal('latitude',13,10);
+            $table->timestamps();
         });
     }
 
