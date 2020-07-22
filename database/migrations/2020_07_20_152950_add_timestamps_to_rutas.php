@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHorariosTable extends Migration
+class AddTimestampsToRutas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateHorariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('horarios', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->enum('type', ['monday-friday', 'weekend-holidays']);
-            $table->time('start',0);
-            $table->time('end',0);
-            $table->timestamps();
+        Schema::table('rutas', function (Blueprint $table) {
+            //
         });
     }
 
@@ -29,6 +25,8 @@ class CreateHorariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('horarios');
+        Schema::table('rutas', function (Blueprint $table) {
+            //
+        });
     }
 }

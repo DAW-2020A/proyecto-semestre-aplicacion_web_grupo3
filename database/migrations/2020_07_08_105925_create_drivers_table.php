@@ -22,6 +22,7 @@ class CreateDriversTable extends Migration
             $table->string('direction',70);
             $table->string('mail',50);
             $table->date('date');
+            $table->timestamps();
         });
     }
 
