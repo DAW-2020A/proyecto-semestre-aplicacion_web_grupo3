@@ -16,6 +16,7 @@ class CreateCategoriePlacesTable extends Migration
         Schema::create('categorie_places', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->String('name');
+            $table->timestamps();
         });
     }
 
