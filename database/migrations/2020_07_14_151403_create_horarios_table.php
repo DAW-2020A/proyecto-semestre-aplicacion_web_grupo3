@@ -18,6 +18,7 @@ class CreateHorariosTable extends Migration
             $table->enum('type', ['monday-friday', 'weekend-holidays']);
             $table->time('start',0);
             $table->time('end',0);
+            $table->timestamps();
         });
     }
 

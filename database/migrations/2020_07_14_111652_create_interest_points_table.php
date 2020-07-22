@@ -22,6 +22,7 @@ class CreateInterestPointsTable extends Migration
             $table->time('hour_end', 0);
             $table->decimal('latitude',13,10);
             $table->decimal('longitude',13,10);
+            $table->timestamps();
         });
     }
 

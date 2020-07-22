@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriePlacesTable extends Migration
+class AddTimestampsToRutas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateCategoriePlacesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorie_places', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->String('name');
-            $table->timestamps();
+        Schema::table('rutas', function (Blueprint $table) {
+            //
         });
     }
 
@@ -27,6 +25,8 @@ class CreateCategoriePlacesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorie_places');
+        Schema::table('rutas', function (Blueprint $table) {
+            //
+        });
     }
 }
