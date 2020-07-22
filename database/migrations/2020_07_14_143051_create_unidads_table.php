@@ -17,6 +17,7 @@ class CreateUnidadsTable extends Migration
             $table->bigIncrements('id');
             $table->string('placa',7);
             $table->decimal('unit_number',5);
+            $table->timestamps();
         });
     }
 
