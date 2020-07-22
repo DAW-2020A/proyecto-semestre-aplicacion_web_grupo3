@@ -20,6 +20,7 @@ class CreateCooperativasTable extends Migration
             $table->string('direction',100);
             $table->string('phone',10);
             $table->string('mail',50);
+            $table->timestamps();
         });
     }
 
