@@ -17,6 +17,7 @@ class CreateRutasTable extends Migration
             $table->bigIncrements('id');
             $table->string('name',50);
             $table->decimal('units_number',3);
+            $table->timestamps();
         });
     }
 
