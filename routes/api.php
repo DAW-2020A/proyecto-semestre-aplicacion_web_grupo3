@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Http\Request;
 
 /*
@@ -44,3 +45,10 @@ Route::get('cooperativas/{cooperativas}', 'CooperativaController@show');
 Route::post('cooperativas', 'CooperativaController@store');
 Route::put('cooperativas/{cooperativas}', 'CooperativaController@update');
 Route::delete('cooperativas/{cooperativas}', 'CooperativaController@delete');
+
+//Rutas InteresPoint
+Route::get('interest_points', 'InterestPointController@index');
+Route::get('interest_points/{interest_points}', 'InterestPointController@show');
+Route::post('interest_points', 'InterestPointController@store');
+Route::put('interest_points/{interest_points}', 'InterestPointController@update');
+Route::delete('interest_points/{interest_points}', 'InterestPointController@delete');
