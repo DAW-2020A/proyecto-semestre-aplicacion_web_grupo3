@@ -23,3 +23,10 @@ Route::get('bus_stops/{bus_stop}', 'BusStopController@show');
 Route::post('bus_stops', 'BusStopController@store');
 Route::put('bus_stops/{bus_stop}', 'BusStopController@update');
 Route::delete('bus_stops/{bus_stop}', 'BusStopController@delete');
+
+// Rutas Rutas
+Route::get('rutas', 'RutasController@index');
+Route::get('rutas/{rutas}', 'RutasController@show');
+Route::post('rutas', 'RutasController@store');
+Route::put('rutas/{rutas}', 'RutasController@update');
+Route::delete('rutas/{rutas}', 'RutasController@delete');
