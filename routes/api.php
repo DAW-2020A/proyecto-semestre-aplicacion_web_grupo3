@@ -37,3 +37,10 @@ Route::get('drivers/{drivers}', 'DriverController@show');
 Route::post('drivers', 'DriverController@store');
 Route::put('drivers/{drivers}', 'DriverController@update');
 Route::delete('drivers/{drivers}', 'DriverController@delete');
+
+//Rutas Cooperativa
+Route::get('cooperativas', 'CooperativaController@index');
+Route::get('cooperativas/{cooperativas}', 'CooperativaController@show');
+Route::post('cooperativas', 'CooperativaController@store');
+Route::put('cooperativas/{cooperativas}', 'CooperativaController@update');
+Route::delete('cooperativas/{cooperativas}', 'CooperativaController@delete');
