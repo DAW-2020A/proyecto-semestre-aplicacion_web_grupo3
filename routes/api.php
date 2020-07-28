@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
+
+//Rutas Bus Stop
+Route::get('bus_stops', 'BusStopController@index');
+Route::get('bus_stops/{bus_stop}', 'BusStopController@show');
+Route::post('bus_stops', 'BusStopController@store');
+Route::put('bus_stops/{bus_stop}', 'BusStopController@update');
+Route::delete('bus_stops/{bus_stop}', 'BusStopController@delete');
