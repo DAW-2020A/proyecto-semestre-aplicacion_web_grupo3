@@ -30,3 +30,10 @@ Route::get('rutas/{rutas}', 'RutasController@show');
 Route::post('rutas', 'RutasController@store');
 Route::put('rutas/{rutas}', 'RutasController@update');
 Route::delete('rutas/{rutas}', 'RutasController@delete');
+
+//Rutas Driver
+Route::get('drivers', 'DriverController@index');
+Route::get('drivers/{drivers}', 'DriverController@show');
+Route::post('drivers', 'DriverController@store');
+Route::put('drivers/{drivers}', 'DriverController@update');
+Route::delete('drivers/{drivers}', 'DriverController@delete');
