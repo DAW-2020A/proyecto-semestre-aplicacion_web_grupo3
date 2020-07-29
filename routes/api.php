@@ -58,3 +58,10 @@ Route::get('horarios/{horarios}', 'HorarioController@show');
 Route::post('horarios', 'HorarioController@store');
 Route::put('horarios/{horarios}', 'HorarioController@update');
 Route::delete('horarios/{horarios}', 'HorarioController@delete');
+
+//Rutas InteresPoint
+Route::get('categorie_places', 'CategoriePlaceController@index');
+Route::get('categorie_places/{categorie_places}', 'CategoriePlaceController@show');
+Route::post('categorie_places', 'CategoriePlaceController@store');
+Route::put('categorie_places/{categorie_places}', 'CategoriePlaceController@update');
+Route::delete('categorie_places/{categorie_places}', 'CategoriePlaceController@delete');
