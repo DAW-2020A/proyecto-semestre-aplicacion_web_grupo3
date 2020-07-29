@@ -51,3 +51,10 @@ Route::get('interest_points/{interest_points}', 'InterestPointController@show');
 Route::post('interest_points', 'InterestPointController@store');
 Route::put('interest_points/{interest_points}', 'InterestPointController@update');
 Route::delete('interest_points/{interest_points}', 'InterestPointController@delete');
+
+//Rutas Horarios
+Route::get('horarios', 'HorarioController@index');
+Route::get('horarios/{horarios}', 'HorarioController@show');
+Route::post('horarios', 'HorarioController@store');
+Route::put('horarios/{horarios}', 'HorarioController@update');
+Route::delete('horarios/{horarios}', 'HorarioController@delete');
