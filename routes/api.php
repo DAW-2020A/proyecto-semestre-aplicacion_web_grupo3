@@ -91,7 +91,7 @@ Route::get('horarios/{horarios}', 'HorarioController@show');
 Route::get('categorie_places', 'CategoriePlaceController@index');
 Route::get('categorie_places/{categorie_places}', 'CategoriePlaceController@show');
 
-
+Route::get('drivers', 'DriverController@index');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     //Bus Stop
@@ -105,7 +105,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('rutas/{rutas}', 'RutasController@delete');
 
     //Driver
-    Route::get('drivers', 'DriverController@index');
+
     Route::get('drivers/{drivers}', 'DriverController@show');
     Route::post('drivers', 'DriverController@store');
     Route::put('drivers/{drivers}', 'DriverController@update');
