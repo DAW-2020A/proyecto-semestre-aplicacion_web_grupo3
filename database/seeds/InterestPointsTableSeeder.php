@@ -26,7 +26,7 @@ class InterestPointsTableSeeder extends Seeder
                 'phone'=> '2236089',
                 'hour_start'=>$faker->time(),
                 'hour_end'=>$faker->time(),
-                'latitude'=> -0.22985,
+                'latitude'=> $faker->numberBetween($min=0,$max=100),
                 'longitude'=> -78.52495,
             ]);
         }
