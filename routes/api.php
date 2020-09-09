@@ -66,7 +66,7 @@ Route::post('categorie_places', 'CategoriePlaceController@store');
 Route::put('categorie_places/{categorie_places}', 'CategoriePlaceController@update');
 Route::delete('categorie_places/{categorie_places}', 'CategoriePlaceController@delete');
 */
-
+Route::group(['middleware' => ['cors']], function() {
 //User
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@authenticate');
@@ -132,4 +132,5 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('categorie_places', 'CategoriePlaceController@store');
     Route::put('categorie_places/{categorie_places}', 'CategoriePlaceController@update');
     Route::delete('categorie_places/{categorie_places}', 'CategoriePlaceController@delete');
+});
 });
