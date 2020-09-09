@@ -66,70 +66,71 @@ Route::post('categorie_places', 'CategoriePlaceController@store');
 Route::put('categorie_places/{categorie_places}', 'CategoriePlaceController@update');
 Route::delete('categorie_places/{categorie_places}', 'CategoriePlaceController@delete');
 */
-
+Route::group(['middleware' => ['cors']], function() {
 //User
-Route::post('register', 'UserController@register');
-Route::post('login', 'UserController@authenticate');
+    Route::post('register', 'UserController@register');
+    Route::post('login', 'UserController@authenticate');
 
 //Bus Stop
-Route::get('bus_stops', 'BusStopController@index');
-Route::get('bus_stops/{bus_stop}', 'BusStopController@show');
+    Route::get('bus_stops', 'BusStopController@index');
+    Route::get('bus_stops/{bus_stop}', 'BusStopController@show');
 
 //Rutas
-Route::get('rutas', 'RutasController@index');
-Route::get('rutas/{rutas}', 'RutasController@show');
+    Route::get('rutas', 'RutasController@index');
+    Route::get('rutas/{rutas}', 'RutasController@show');
 
 //Interest Points
-Route::get('interest_points', 'InterestPointController@index');
-Route::get('interest_points/{interest_points}', 'InterestPointController@show');
+    Route::get('interest_points', 'InterestPointController@index');
+    Route::get('interest_points/{interest_points}', 'InterestPointController@show');
 
 //Horarios
-Route::get('horarios', 'HorarioController@index');
-Route::get('horarios/{horarios}', 'HorarioController@show');
+    Route::get('horarios', 'HorarioController@index');
+    Route::get('horarios/{horarios}', 'HorarioController@show');
 
 //Categories Places
-Route::get('categorie_places', 'CategoriePlaceController@index');
-Route::get('categorie_places/{categorie_places}', 'CategoriePlaceController@show');
+    Route::get('categorie_places', 'CategoriePlaceController@index');
+    Route::get('categorie_places/{categorie_places}', 'CategoriePlaceController@show');
 
-Route::get('drivers', 'DriverController@index');
+    Route::get('drivers', 'DriverController@index');
 
-Route::group(['middleware' => ['jwt.verify']], function() {
-    //Bus Stop
-    Route::post('bus_stops', 'BusStopController@store');
-    Route::put('bus_stops/{bus_stop}', 'BusStopController@update');
-    Route::delete('bus_stops/{bus_stop}', 'BusStopController@delete');
+    Route::group(['middleware' => ['jwt.verify']], function () {
+        //Bus Stop
+        Route::post('bus_stops', 'BusStopController@store');
+        Route::put('bus_stops/{bus_stop}', 'BusStopController@update');
+        Route::delete('bus_stops/{bus_stop}', 'BusStopController@delete');
 
-    //Rutas
-    Route::post('rutas', 'RutasController@store');
-    Route::put('rutas/{rutas}', 'RutasController@update');
-    Route::delete('rutas/{rutas}', 'RutasController@delete');
+        //Rutas
+        Route::post('rutas', 'RutasController@store');
+        Route::put('rutas/{rutas}', 'RutasController@update');
+        Route::delete('rutas/{rutas}', 'RutasController@delete');
 
-    //Driver
+        //Driver
 
-    Route::get('drivers/{drivers}', 'DriverController@show');
-    Route::post('drivers', 'DriverController@store');
-    Route::put('drivers/{drivers}', 'DriverController@update');
-    Route::delete('drivers/{drivers}', 'DriverController@delete');
+        Route::get('drivers/{drivers}', 'DriverController@show');
+        Route::post('drivers', 'DriverController@store');
+        Route::put('drivers/{drivers}', 'DriverController@update');
+        Route::delete('drivers/{drivers}', 'DriverController@delete');
 
-    //Coperativa
-    Route::get('cooperativas', 'CooperativaController@index');
-    Route::get('cooperativas/{cooperativas}', 'CooperativaController@show');
-    Route::post('cooperativas', 'CooperativaController@store');
-    Route::put('cooperativas/{cooperativas}', 'CooperativaController@update');
-    Route::delete('cooperativas/{cooperativas}', 'CooperativaController@delete');
+        //Coperativa
+        Route::get('cooperativas', 'CooperativaController@index');
+        Route::get('cooperativas/{cooperativas}', 'CooperativaController@show');
+        Route::post('cooperativas', 'CooperativaController@store');
+        Route::put('cooperativas/{cooperativas}', 'CooperativaController@update');
+        Route::delete('cooperativas/{cooperativas}', 'CooperativaController@delete');
 
-    //Interest Points
-    Route::post('interest_points', 'InterestPointController@store');
-    Route::put('interest_points/{interest_points}', 'InterestPointController@update');
-    Route::delete('interest_points/{interest_points}', 'InterestPointController@delete');
+        //Interest Points
+        Route::post('interest_points', 'InterestPointController@store');
+        Route::put('interest_points/{interest_points}', 'InterestPointController@update');
+        Route::delete('interest_points/{interest_points}', 'InterestPointController@delete');
 
-    //Horarios
-    Route::post('horarios', 'HorarioController@store');
-    Route::put('horarios/{horarios}', 'HorarioController@update');
-    Route::delete('horarios/{horarios}', 'HorarioController@delete');
+        //Horarios
+        Route::post('horarios', 'HorarioController@store');
+        Route::put('horarios/{horarios}', 'HorarioController@update');
+        Route::delete('horarios/{horarios}', 'HorarioController@delete');
 
-    //Categories Places
-    Route::post('categorie_places', 'CategoriePlaceController@store');
-    Route::put('categorie_places/{categorie_places}', 'CategoriePlaceController@update');
-    Route::delete('categorie_places/{categorie_places}', 'CategoriePlaceController@delete');
+        //Categories Places
+        Route::post('categorie_places', 'CategoriePlaceController@store');
+        Route::put('categorie_places/{categorie_places}', 'CategoriePlaceController@update');
+        Route::delete('categorie_places/{categorie_places}', 'CategoriePlaceController@delete');
+    });
 });
