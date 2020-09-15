@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cooperativa;
 use Illuminate\Http\Request;
-
+use JWTAuth;
 class CooperativaController extends Controller
 {
     public function index()

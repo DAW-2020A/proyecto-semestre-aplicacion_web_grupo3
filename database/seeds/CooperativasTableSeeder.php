@@ -24,6 +24,7 @@ class CooperativasTableSeeder extends Seeder
             'direction'=> $faker->address,
             'phone'=> '2555255',
             'mail'=> $faker->email,
+
         ]);
 
     }
