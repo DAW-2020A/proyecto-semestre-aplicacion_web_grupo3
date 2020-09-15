@@ -17,13 +17,17 @@ class UnidadesTableSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        for($i = 0; $i < 10; $i++) {
+        $cooperativas = App\Cooperativa::all();
+        foreach($cooperativas as $cooperativa){
+            for($i = 0; $i < 10; $i++) {
 
-            Unidad::create([
-
-                'placa'=> 'PDK847'.(string)$i,
-                'unit_number'=> $faker->numberBetween($min=1130,$max=2500),
-            ]);
+                $cooperativa->unidades()->save(New Unidad([
+                    'placa'=> 'PDK847'.(string)$i,
+                    'unit_number'=> $faker->numberBetween($min=1130,$max=2500),
+                ]));
+            }
         }
+
+
     }
 }

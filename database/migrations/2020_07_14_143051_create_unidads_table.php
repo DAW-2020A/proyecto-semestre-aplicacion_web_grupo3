@@ -16,7 +16,7 @@ class CreateUnidadsTable extends Migration
         Schema::create('unidads', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('placa',7);
-            $table->decimal('unit_number',5);
+            $table->integer('unit_number');
             $table->timestamps();
         });
     }
