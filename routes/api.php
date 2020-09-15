@@ -71,6 +71,8 @@ Route::group(['middleware' => ['cors']], function() {
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@authenticate');
 
+
+//hacer para user un metodo get para que se quede la sesion activa
 //Bus Stop
 Route::get('bus_stops', 'BusStopController@index');
 Route::get('bus_stops/{bus_stop}', 'BusStopController@show');
@@ -91,9 +93,11 @@ Route::get('horarios/{horarios}', 'HorarioController@show');
 Route::get('categorie_places', 'CategoriePlaceController@index');
 Route::get('categorie_places/{categorie_places}', 'CategoriePlaceController@show');
 
-Route::get('drivers', 'DriverController@index');
+
 
 Route::group(['middleware' => ['jwt.verify']], function() {
+    Route::get('user', 'UserController@getAuthenticatedUser');
+    Route::post('logout', 'UserController@logout');
     //Bus Stop
     Route::post('bus_stops', 'BusStopController@store');
     Route::put('bus_stops/{bus_stop}', 'BusStopController@update');
@@ -105,7 +109,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('rutas/{rutas}', 'RutasController@delete');
 
     //Driver
-
+    Route::get('drivers', 'DriverController@index');
     Route::get('drivers/{drivers}', 'DriverController@show');
     Route::post('drivers', 'DriverController@store');
     Route::put('drivers/{drivers}', 'DriverController@update');
