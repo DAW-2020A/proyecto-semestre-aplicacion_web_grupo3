@@ -12,4 +12,8 @@ class Unidad extends Model
     {
        return $this->belongsTo('App\Cooperativa');
     }
+    public function drivers()
+    {
+        return $this->hasOne('App\Drivers');
+    }
 }

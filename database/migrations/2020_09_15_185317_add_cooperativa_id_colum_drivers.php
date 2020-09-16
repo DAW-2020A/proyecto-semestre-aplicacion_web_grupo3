@@ -27,7 +27,7 @@ class AddCooperativaIdColumDrivers extends Migration
     public function down()
     {
         Schema::table('drivers', function (Blueprint $table) {
-            $table->dropForeign(['cooperativas_id']);
+            $table->dropForeign(['cooperativa_id']);
         });
     }
 }
