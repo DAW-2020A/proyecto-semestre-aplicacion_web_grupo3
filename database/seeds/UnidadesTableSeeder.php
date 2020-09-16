@@ -20,12 +20,17 @@ class UnidadesTableSeeder extends Seeder
         $cooperativas = App\Cooperativa::all();
         foreach($cooperativas as $cooperativa){
             for($i = 0; $i < 10; $i++) {
+                $drivers = $cooperativa->drivers;
+                foreach ($drivers as $driver) {
+                    $cooperativa->unidades()->save(New Unidad([
+                        'placa'=> 'PDK847'.(string)$i,
+                        'unit_number'=> $faker->numberBetween($min=1130,$max=2500),
+                        'driver_id' => $driver->id
+                    ]));
+                }
 
-                $cooperativa->unidades()->save(New Unidad([
-                    'placa'=> 'PDK847'.(string)$i,
-                    'unit_number'=> $faker->numberBetween($min=1130,$max=2500),
-                ]));
             }
+
         }
 
 

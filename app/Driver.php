@@ -11,4 +11,9 @@ class Driver extends Model
     {
         return $this->belongsTo('App\Cooperativa');
     }
+    public function unidad()
+    {
+        return $this->hasOne('App\Unidad');
+    }
+
 }
