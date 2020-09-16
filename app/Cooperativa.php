@@ -12,4 +12,8 @@ class Cooperativa extends Model
     {
         return $this->hasMany('App\Unidad');
     }
+    public function drivers()
+    {
+        return $this->hasMany('App\Driver');
+    }
 }

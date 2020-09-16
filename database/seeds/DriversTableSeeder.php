@@ -16,17 +16,20 @@ class DriversTableSeeder extends Seeder
         Driver::truncate();
 
         $faker = \Faker\Factory::create();
+        $cooperativas = App\Cooperativa::all();
+        foreach($cooperativas as $cooperativa){
+            for($i = 0; $i < 50; $i++) {
 
-        for($i = 0; $i < 50; $i++) {
-            Driver::create([
-                'name'=> 'Miguel',
-                'last_name'=> $faker->lastName,
-                'cellphone'=> '0980271574',
-                'phone'=> '2236088',
-                'direction'=> $faker->address,
-                'mail'=> $faker->email,
-                'date'=> $faker->date(),
-                ]);
+                $cooperativa->drivers()->save(New Driver([
+                    'name'=> 'Miguel',
+                    'last_name'=> $faker->lastName,
+                    'cellphone'=> '0980271574',
+                    'phone'=> '2236088',
+                    'direction'=> $faker->address,
+                    'mail'=> $faker->email,
+                    'date'=> $faker->date(),
+                ]));
+            }
         }
     }
 }
