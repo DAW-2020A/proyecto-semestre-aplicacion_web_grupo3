@@ -20,7 +20,8 @@ class DriversTableSeeder extends Seeder
         foreach($cooperativas as $cooperativa){
             for($i = 0; $i < 50; $i++) {
 
-                $cooperativa->drivers()->save(New Driver([
+                $cooperativa->drivers()->save(
+                    New Driver([
                     'name'=> 'Miguel',
                     'last_name'=> $faker->lastName,
                     'cellphone'=> '0980271574',

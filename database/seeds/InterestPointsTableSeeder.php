@@ -16,19 +16,21 @@ class InterestPointsTableSeeder extends Seeder
         InterestPoint::truncate();
 
         $faker = \Faker\Factory::create();
-
-        for($i = 0; $i < 50; $i++) {
-            $a=$i+1;
-            InterestPoint::create([
-
-                'name'=> 'InterestPoint'.(string)$a,
-                'direction'=> $faker->address,
-                'phone'=> '2236089',
-                'hour_start'=>$faker->time(),
-                'hour_end'=>$faker->time(),
-                'latitude'=> $faker->numberBetween($min=0,$max=100),
-                'longitude'=> -78.52495,
-            ]);
+        $busstops = App\BusStop::all();
+        foreach($busstops as $busstop){
+            for($i = 0; $i < 50; $i++) {
+                $a=$i+1;
+                $busstop->interespoint()->save(New
+                InterestPoint([
+                    'name'=> 'InterestPoint'.(string)$a,
+                    'direction'=> $faker->address,
+                    'phone'=> '2236089',
+                    'hour_start'=>$faker->time(),
+                    'hour_end'=>$faker->time(),
+                    'latitude'=> $faker->numberBetween($min=0,$max=100),
+                    'longitude'=> -78.52495,
+                ]));
+            }
         }
     }
 }
