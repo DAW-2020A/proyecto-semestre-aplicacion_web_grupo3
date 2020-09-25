@@ -11,4 +11,8 @@ class Rutas extends Model
     {
         return $this->hasMany('App\Unidad');
     }
+    public function rutasbusstop()
+    {
+        return $this->hasMany('App\RutasBusstop');
+    }
 }
