@@ -12,4 +12,5 @@ class BusStop extends Model
     {
         return $this->hasMany('App\InterestPoint');
     }
+
 }

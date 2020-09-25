@@ -11,4 +11,8 @@ class InterestPoint extends Model
     {
         return $this->belongsTo('App\BusStop');
     }
+    public function categorieplace()
+    {
+        return $this->belongsTo('App\CategoriePlace');
+    }
 }
