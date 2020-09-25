@@ -16,4 +16,8 @@ class Unidad extends Model
     {
         return $this->hasOne('App\Drivers');
     }
+    public function rutas()
+    {
+        return $this->belongsTo('App\Rutas');
+    }
 }
