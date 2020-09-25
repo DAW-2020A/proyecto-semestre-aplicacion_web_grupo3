@@ -15,4 +15,8 @@ class RutasBusstop extends Model
     {
         return $this->belongsTo('App\BusStop');
     }
+    public function horario()
+    {
+        return $this->hasMany('App\Horario');
+    }
 }
